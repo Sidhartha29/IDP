@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, MapPin, Train, Plane, Bus, Car, Ship, Menu, X, User, LogOut, History, Clock, Star, Phone, Mail, Facebook, Twitter, Instagram, Utensils, Bike, Hotel, Calendar } from 'lucide-react';
+import { Search, MapPin, Train, Plane, Bus, Car, Ship, Menu, X, User, LogOut, History, Clock, Star, Phone, Mail, Facebook, Twitter, Instagram, Utensils, Bike } from 'lucide-react';
 
 const IndianTravelWebsite = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -19,7 +19,6 @@ const IndianTravelWebsite = () => {
     transportType: ''
   });
 
-  // Add search debouncing
   const [debouncedSearch, setDebouncedSearch] = useState('');
 
   useEffect(() => {
@@ -254,13 +253,464 @@ const IndianTravelWebsite = () => {
         { name: "Shahi Tukda", description: "Bread pudding dessert", price: "₹60-120" },
         { name: "Phirni", description: "Rice pudding", price: "₹50-100" }
       ]
+    },
+    {
+      id: 16,
+      name: "Amber Fort",
+      state: "Rajasthan",
+      city: "Jaipur",
+      image: "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=800",
+      rating: 4.8,
+      history: "Built in 1592 by Raja Man Singh I, this majestic fort blends Hindu and Mughal architecture with stunning mirror work.",
+      streetFood: [
+        { name: "Dal Baati Churma", description: "Traditional Rajasthani meal", price: "₹120-200" },
+        { name: "Ghevar", description: "Sweet disc-shaped dessert", price: "₹80-150" },
+        { name: "Mirchi Bada", description: "Chili fritters", price: "₹40-80" },
+        { name: "Mawa Kachori", description: "Sweet fried pastry", price: "₹60-120" }
+      ]
+    },
+    {
+      id: 17,
+      name: "Khajuraho Temples",
+      state: "Madhya Pradesh",
+      city: "Khajuraho",
+      image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800",
+      rating: 4.8,
+      history: "Famous for their nagara-style architectural symbolism and exquisite sculptures of gods, goddesses, and erotic art.",
+      streetFood: [
+        { name: "Poha", description: "Flattened rice breakfast", price: "₹30-60" },
+        { name: "Jalebi", description: "Sweet spiral dessert", price: "₹40-80" },
+        { name: "Samosa", description: "Fried pastry with filling", price: "₹20-40" },
+        { name: "Bhutte Ka Kees", description: "Grated corn snack", price: "₹50-90" }
+      ]
+    },
+    {
+      id: 18,
+      name: "Backwaters of Kerala",
+      state: "Kerala",
+      city: "Alleppey",
+      image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800",
+      rating: 4.9,
+      history: "Network of 900 km of interconnected waterways, lakes, and lagoons along the Arabian Sea coast.",
+      streetFood: [
+        { name: "Appam with Stew", description: "Rice pancakes with curry", price: "₹80-150" },
+        { name: "Puttu Kadala", description: "Steamed rice with chickpeas", price: "₹60-100" },
+        { name: "Karimeen Pollichathu", description: "Pearl spot fish", price: "₹150-250" },
+        { name: "Kerala Porotta", description: "Layered flatbread", price: "₹40-80" }
+      ]
+    },
+    {
+      id: 19,
+      name: "Goa Beaches",
+      state: "Goa",
+      city: "Panaji",
+      image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800",
+      rating: 4.8,
+      history: "Famous for its pristine beaches, Portuguese heritage, and vibrant nightlife along the Arabian Sea.",
+      streetFood: [
+        { name: "Fish Curry Rice", description: "Traditional Goan meal", price: "₹120-200" },
+        { name: "Pork Vindaloo", description: "Spicy pork curry", price: "₹150-250" },
+        { name: "Bebinca", description: "Layered Goan dessert", price: "₹80-150" },
+        { name: "Chourico Pao", description: "Goan sausage with bread", price: "₹60-120" }
+      ]
+    },
+    {
+      id: 20,
+      name: "Charminar",
+      state: "Telangana",
+      city: "Hyderabad",
+      image: "https://images.unsplash.com/photo-1584646098378-0874589d76b1?w=800",
+      rating: 4.7,
+      history: "Built in 1591 by Quli Qutb Shah, this iconic monument has four grand arches and stands as a symbol of Hyderabad.",
+      streetFood: [
+        { name: "Hyderabadi Biryani", description: "Fragrant rice with meat", price: "₹180-300" },
+        { name: "Haleem", description: "Meat and lentil stew", price: "₹100-180" },
+        { name: "Irani Chai", description: "Special tea", price: "₹20-40" },
+        { name: "Double Ka Meetha", description: "Bread pudding dessert", price: "₹60-120" }
+      ]
+    },
+    {
+      id: 21,
+      name: "Dal Lake",
+      state: "Jammu & Kashmir",
+      city: "Srinagar",
+      image: "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800",
+      rating: 4.9,
+      history: "The 'Jewel in the crown of Kashmir' known for its houseboats, floating gardens, and shikara rides.",
+      streetFood: [
+        { name: "Rogan Josh", description: "Aromatic lamb curry", price: "₹150-250" },
+        { name: "Gushtaba", description: "Meatballs in yogurt", price: "₹180-280" },
+        { name: "Kashmiri Kahwa", description: "Traditional green tea", price: "₹30-60" },
+        { name: "Sheermal", description: "Saffron-flavored bread", price: "₹40-80" }
+      ]
+    },
+    {
+      id: 22,
+      name: "Ellora Caves",
+      state: "Maharashtra",
+      city: "Aurangabad",
+      image: "https://images.unsplash.com/photo-1609920658906-8223bd289001?w=800",
+      rating: 4.9,
+      history: "34 rock-cut caves representing Buddhist, Hindu, and Jain monuments, showcasing religious harmony.",
+      streetFood: [
+        { name: "Biryani", description: "Fragrant rice dish", price: "₹120-200" },
+        { name: "Kanda Bhaji", description: "Onion fritters", price: "₹30-60" },
+        { name: "Sabudana Vada", description: "Tapioca fritters", price: "₹40-70" },
+        { name: "Puran Poli", description: "Sweet flatbread", price: "₹50-90" }
+      ]
+    },
+    {
+      id: 23,
+      name: "Lotus Temple",
+      state: "Delhi",
+      city: "New Delhi",
+      image: "https://images.unsplash.com/photo-1586339277861-bc42f6a57e71?w=800",
+      rating: 4.8,
+      history: "Bahá'í House of Worship shaped like a lotus flower, open to all religions for meditation and prayer.",
+      streetFood: [
+        { name: "Chole Bhature", description: "Spicy chickpeas with bread", price: "₹70-120" },
+        { name: "Aloo Chaat", description: "Potato snack", price: "₹40-70" },
+        { name: "Dahi Bhalle", description: "Lentil dumplings", price: "₹50-90" },
+        { name: "Kulfi Falooda", description: "Ice cream dessert", price: "₹80-150" }
+      ]
+    },
+    {
+      id: 24,
+      name: "Kaziranga National Park",
+      state: "Assam",
+      city: "Bokakhat",
+      image: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800",
+      rating: 4.9,
+      history: "Home to two-thirds of the world's great one-horned rhinoceros population and UNESCO World Heritage Site.",
+      streetFood: [
+        { name: "Assam Laksa", description: "Tangy fish soup", price: "₹80-150" },
+        { name: "Pitha", description: "Rice cakes", price: "₹40-80" },
+        { name: "Masor Tenga", description: "Sour fish curry", price: "₹120-200" },
+        { name: "Tea", description: "Assam's famous tea", price: "₹20-40" }
+      ]
+    },
+    {
+      id: 25,
+      name: "Mahabalipuram",
+      state: "Tamil Nadu",
+      city: "Mahabalipuram",
+      image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800",
+      rating: 4.8,
+      history: "7th-century port city of Pallava dynasty with rock-cut caves and monolithic temples.",
+      streetFood: [
+        { name: "Seafood Platter", description: "Fresh coastal seafood", price: "₹200-350" },
+        { name: "Filter Coffee", description: "South Indian coffee", price: "₹30-60" },
+        { name: "Murukku", description: "Rice snack", price: "₹50-100" },
+        { name: "Pongal", description: "Rice and lentil dish", price: "₹60-110" }
+      ]
+    },
+    {
+      id: 26,
+      name: "Rann of Kutch",
+      state: "Gujarat",
+      city: "Bhuj",
+      image: "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800",
+      rating: 4.8,
+      history: "World's largest salt desert that transforms into a white marvel during the Rann Utsav festival.",
+      streetFood: [
+        { name: "Kutchhi Dabeli", description: "Spicy potato burger", price: "₹30-60" },
+        { name: "Ghotua", description: "Traditional snack", price: "₹40-80" },
+        { name: "Methi Ka Thepla", description: "Fenugreek flatbread", price: "₹20-40" },
+        { name: "Khaman", description: "Steamed snack", price: "₹40-70" }
+      ]
+    },
+    {
+      id: 27,
+      name: "Sunderbans",
+      state: "West Bengal",
+      city: "Gosaba",
+      image: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800",
+      rating: 4.9,
+      history: "Largest tidal mangrove forest in the world and home to the Royal Bengal Tiger.",
+      streetFood: [
+        { name: "Macher Jhol", description: "Fish curry", price: "₹100-180" },
+        { name: "Chingri Malai Curry", description: "Prawn coconut curry", price: "₹150-250" },
+        { name: "Misti Doi", description: "Sweet yogurt", price: "₹40-80" },
+        { name: "Sandesh", description: "Sweet cheese dessert", price: "₹50-100" }
+      ]
+    },
+    {
+      id: 28,
+      name: "Rishikesh",
+      state: "Uttarakhand",
+      city: "Rishikesh",
+      image: "https://images.unsplash.com/photo-1590682680989-8b8b52e0c79f?w=800",
+      rating: 4.8,
+      history: "Yoga capital of the world situated on the banks of Ganges, gateway to the Himalayas.",
+      streetFood: [
+        { name: "Aloo Puri", description: "Potato curry with bread", price: "₹60-100" },
+        { name: "Kachaudi", description: "Fried bread with filling", price: "₹40-80" },
+        { name: "Bal Mithai", description: "Local sweet", price: "₹80-150" },
+        { name: "Singodi", description: "Coconut sweet", price: "₹50-100" }
+      ]
+    },
+    {
+      id: 29,
+      name: "Somnath Temple",
+      state: "Gujarat",
+      city: "Veraval",
+      image: "https://images.unsplash.com/photo-1609920658906-8223bd289001?w=800",
+      rating: 4.8,
+      history: "One of the 12 Jyotirlinga shrines of Shiva, believed to be the first among them.",
+      streetFood: [
+        { name: "Dhokla", description: "Steamed snack", price: "₹40-80" },
+        { name: "Khandvi", description: "Gram flour rolls", price: "₹50-90" },
+        { name: "Fafda", description: "Crispy snack", price: "₹30-60" },
+        { name: "Jalebi", description: "Sweet dessert", price: "₹40-80" }
+      ]
+    },
+    {
+      id: 30,
+      name: "Leh-Ladakh",
+      state: "Ladakh",
+      city: "Leh",
+      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+      rating: 5.0,
+      history: "High-altitude desert landscape with ancient monasteries and stunning mountain vistas.",
+      streetFood: [
+        { name: "Thukpa", description: "Noodle soup", price: "₹80-150" },
+        { name: "Momos", description: "Steamed dumplings", price: "₹60-120" },
+        { name: "Butter Tea", description: "Traditional salted tea", price: "₹30-60" },
+        { name: "Skyu", description: "Traditional pasta", price: "₹70-130" }
+      ]
+    },
+    {
+      id: 31,
+      name: "Sanchi Stupa",
+      state: "Madhya Pradesh",
+      city: "Sanchi",
+      image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800",
+      rating: 4.6,
+      history: "Oldest stone structure in India, originally commissioned by Emperor Ashoka in 3rd century BCE.",
+      streetFood: [
+        { name: "Poha", description: "Flattened rice", price: "₹30-60" },
+        { name: "Jalebi", description: "Sweet spiral", price: "₹40-80" },
+        { name: "Samosa", description: "Fried pastry", price: "₹20-40" },
+        { name: "Bhutte Ka Kees", description: "Corn snack", price: "₹50-90" }
+      ]
+    },
+    {
+      id: 32,
+      name: "Munnar",
+      state: "Kerala",
+      city: "Munnar",
+      image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800",
+      rating: 4.8,
+      history: "Popular hill station known for its tea plantations, lush green mountains, and cool climate.",
+      streetFood: [
+        { name: "Kerala Parotta", description: "Layered bread", price: "₹40-80" },
+        { name: "Beef Fry", description: "Spicy beef", price: "₹120-200" },
+        { name: "Appam", description: "Rice pancakes", price: "₹50-100" },
+        { name: "Tea", description: "Local tea", price: "₹20-40" }
+      ]
+    },
+    {
+      id: 33,
+      name: "Udaipur City Palace",
+      state: "Rajasthan",
+      city: "Udaipur",
+      image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800",
+      rating: 4.8,
+      history: "Largest royal complex in Rajasthan overlooking Lake Pichola, showcasing Rajput architecture.",
+      streetFood: [
+        { name: "Dal Baati Churma", description: "Traditional meal", price: "₹120-200" },
+        { name: "Gatte Ki Sabzi", description: "Gram flour curry", price: "₹80-150" },
+        { name: "Mirchi Vada", description: "Chili fritters", price: "₹40-80" },
+        { name: "Mawa Kachori", description: "Sweet pastry", price: "₹60-120" }
+      ]
+    },
+    {
+      id: 34,
+      name: "Shimla",
+      state: "Himachal Pradesh",
+      city: "Shimla",
+      image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800",
+      rating: 4.7,
+      history: "Former summer capital of British India, known for its colonial architecture and scenic beauty.",
+      streetFood: [
+        { name: "Momos", description: "Steamed dumplings", price: "₹60-120" },
+        { name: "Thukpa", description: "Noodle soup", price: "₹80-150" },
+        { name: "Siddu", description: "Local bread", price: "₹40-80" },
+        { name: "Babru", description: "Black gram dish", price: "₹50-100" }
+      ]
+    },
+    {
+      id: 35,
+      name: "Bodh Gaya",
+      state: "Bihar",
+      city: "Bodh Gaya",
+      image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800",
+      rating: 4.8,
+      history: "Where Buddha attained enlightenment, one of the most important Buddhist pilgrimage sites.",
+      streetFood: [
+        { name: "Litti Chokha", description: "Baked dough with mash", price: "₹60-120" },
+        { name: "Sattu Sharbat", description: "Protein drink", price: "₹30-60" },
+        { name: "Chana Ghugni", description: "Spiced chickpeas", price: "₹40-80" },
+        { name: "Malpua", description: "Sweet pancake", price: "₹50-100" }
+      ]
+    },
+    {
+      id: 36,
+      name: "Puri Jagannath Temple",
+      state: "Odisha",
+      city: "Puri",
+      image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800",
+      rating: 4.8,
+      history: "Famous Hindu temple dedicated to Lord Jagannath, part of Char Dham pilgrimage.",
+      streetFood: [
+        { name: "Mahaprasad", description: "Temple food", price: "₹50-100" },
+        { name: "Chhena Poda", description: "Burnt cheese", price: "₹60-120" },
+        { name: "Rasagulla", description: "Sweet dessert", price: "₹40-80" },
+        { name: "Pakhala", description: "Fermented rice", price: "₹30-70" }
+      ]
+    },
+    {
+      id: 37,
+      name: "Kanyakumari",
+      state: "Tamil Nadu",
+      city: "Kanyakumari",
+      image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800",
+      rating: 4.7,
+      history: "Southernmost tip of India where three oceans meet - Arabian Sea, Bay of Bengal, and Indian Ocean.",
+      streetFood: [
+        { name: "Seafood Platter", description: "Fresh seafood", price: "₹200-350" },
+        { name: "Kothu Parotta", description: "Shredded bread", price: "₹80-150" },
+        { name: "Fish Fry", description: "Fried fish", price: "₹120-200" },
+        { name: "Banana Chips", description: "Crispy chips", price: "₹50-100" }
+      ]
+    },
+    {
+      id: 38,
+      name: "Shillong",
+      state: "Meghalaya",
+      city: "Shillong",
+      image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800",
+      rating: 4.7,
+      history: "Scotland of the East known for its rolling hills, waterfalls, and British colonial architecture.",
+      streetFood: [
+        { name: "Jadoh", description: "Rice and meat", price: "₹80-150" },
+        { name: "Dohneiiong", description: "Pork with sesame", price: "₹120-200" },
+        { name: "Pumaloi", description: "Rice powder cake", price: "₹40-80" },
+        { name: "Tungrymbai", description: "Fermented soybean", price: "₹60-120" }
+      ]
+    },
+    {
+      id: 39,
+      name: "Gwalior Fort",
+      state: "Madhya Pradesh",
+      city: "Gwalior",
+      image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800",
+      rating: 4.6,
+      history: "One of the largest forts in India, known for its impressive architecture and history.",
+      streetFood: [
+        { name: "Bedai", description: "Fried bread", price: "₹40-80" },
+        { name: "Kachauri", description: "Stuffed pastry", price: "₹30-60" },
+        { name: "Jalebi", description: "Sweet dessert", price: "₹40-80" },
+        { name: "Poha", description: "Flattened rice", price: "₹30-60" }
+      ]
+    },
+    {
+      id: 40,
+      name: "Coorg",
+      state: "Karnataka",
+      city: "Madikeri",
+      image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800",
+      rating: 4.8,
+      history: "Scotland of India known for its coffee plantations, misty hills, and rich Kodava culture.",
+      streetFood: [
+        { name: "Pandi Curry", description: "Pork curry", price: "₹150-250" },
+        { name: "Kadumbuttu", description: "Rice balls", price: "₹60-120" },
+        { name: "Bamboo Shoot Curry", description: "Local specialty", price: "₹80-150" },
+        { name: "Coffee", description: "Local brew", price: "₹30-60" }
+      ]
+    },
+    {
+      id: 41,
+      name: "Ranakpur Temple",
+      state: "Rajasthan",
+      city: "Ranakpur",
+      image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800",
+      rating: 4.7,
+      history: "Famous for its spectacular Jain temple with 1444 intricately carved marble pillars.",
+      streetFood: [
+        { name: "Dal Baati Churma", description: "Traditional meal", price: "₹120-200" },
+        { name: "Gatte Ki Sabzi", description: "Gram flour curry", price: "₹80-150" },
+        { name: "Ker Sangri", description: "Desert beans", price: "₹70-130" },
+        { name: "Mohan Maas", description: "Royal meat", price: "₹200-350" }
+      ]
+    },
+    {
+      id: 42,
+      name: "Darjeeling",
+      state: "West Bengal",
+      city: "Darjeeling",
+      image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800",
+      rating: 4.8,
+      history: "Queen of the Hills famous for its tea plantations, toy train, and Himalayan views.",
+      streetFood: [
+        { name: "Momos", description: "Steamed dumplings", price: "₹60-120" },
+        { name: "Thukpa", description: "Noodle soup", price: "₹80-150" },
+        { name: "Tea", description: "World-famous tea", price: "₹20-50" },
+        { name: "Alu Dum", description: "Spicy potatoes", price: "₹40-80" }
+      ]
+    },
+    {
+      id: 43,
+      name: "Hampi Virupaksha Temple",
+      state: "Karnataka",
+      city: "Hampi",
+      image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800",
+      rating: 4.7,
+      history: "Ancient temple dedicated to Lord Shiva, part of the Group of Monuments at Hampi UNESCO site.",
+      streetFood: [
+        { name: "Benne Dosa", description: "Butter dosa", price: "₹50-100" },
+        { name: "Holige", description: "Sweet flatbread", price: "₹40-80" },
+        { name: "Maddur Vada", description: "Savory snack", price: "₹30-60" },
+        { name: "Ragi Mudde", description: "Finger millet balls", price: "₹60-110" }
+      ]
+    },
+    {
+      id: 44,
+      name: "Mount Abu",
+      state: "Rajasthan",
+      city: "Mount Abu",
+      image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800",
+      rating: 4.6,
+      history: "Only hill station in Rajasthan known for its Dilwara Jain Temples and Nakki Lake.",
+      streetFood: [
+        { name: "Dal Baati Churma", description: "Traditional meal", price: "₹120-200" },
+        { name: "Gatte Ki Sabzi", description: "Gram flour curry", price: "₹80-150" },
+        { name: "Mirchi Bada", description: "Chili fritters", price: "₹40-80" },
+        { name: "Rabdi", description: "Sweet dessert", price: "₹60-120" }
+      ]
+    },
+    {
+      id: 45,
+      name: "Pattadakal",
+      state: "Karnataka",
+      city: "Pattadakal",
+      image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800",
+      rating: 4.6,
+      history: "UNESCO World Heritage Site with 7th and 8th century Hindu and Jain temples.",
+      streetFood: [
+        { name: "Jolada Roti", description: "Sorghum bread", price: "₹30-60" },
+        { name: "Ennegai", description: "Stuffed brinjal", price: "₹60-120" },
+        { name: "Holige", description: "Sweet flatbread", price: "₹40-80" },
+        { name: "Bisi Bele Bath", description: "Rice lentil dish", price: "₹70-130" }
+      ]
     }
   ];
 
   const indianStates = [
     "All States", "Uttar Pradesh", "Maharashtra", "Rajasthan", "Punjab", "Delhi", 
     "Karnataka", "West Bengal", "Tamil Nadu", "Madhya Pradesh", "Kerala", "Goa", 
-    "Gujarat", "Jammu & Kashmir", "Assam", "Uttarakhand", "Telangana", "Ladakh", "Odisha"
+    "Gujarat", "Jammu & Kashmir", "Assam", "Uttarakhand", "Telangana", "Ladakh", 
+    "Odisha", "Himachal Pradesh", "Bihar", "Meghalaya"
   ];
 
   const transportProviders = {
@@ -522,7 +972,7 @@ const IndianTravelWebsite = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
               <MapPin className="text-orange-600 mx-auto mb-4" size={48} />
-              <h3 className="text-2xl font-bold mb-3">15+ Destinations</h3>
+              <h3 className="text-2xl font-bold mb-3">45+ Destinations</h3>
               <p className="text-gray-600">Every major tourist spot across India covered with detailed information</p>
             </div>
             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
@@ -702,7 +1152,6 @@ const IndianTravelWebsite = () => {
             <p className="text-gray-700 leading-relaxed text-justify">{destination.history}</p>
           </div>
 
-          {/* Transportation Options */}
           <div className="mb-8">
             <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
               <MapPin className="mr-2 text-green-600" size={28} />
@@ -737,7 +1186,6 @@ const IndianTravelWebsite = () => {
             </div>
           </div>
 
-          {/* Street Food Section */}
           <div>
             <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
               <Utensils className="mr-2 text-red-600" size={28} />
@@ -989,7 +1437,7 @@ const IndianTravelWebsite = () => {
               © 2025 Incredible India Travel Portal. Made with ❤️ for travelers. All rights reserved.
             </p>
             <p className="text-gray-500 mt-2 text-sm">
-              Showcasing 15+ major destinations with booking and food ordering features
+              Showcasing 45+ major destinations with booking and food ordering features
             </p>
           </div>
         </div>
