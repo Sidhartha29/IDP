@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, MapPin, Train, Plane, Bus, Car, Ship, Menu, X, User, LogOut, History, Clock, Star, Phone, Mail, Facebook, Twitter, Instagram, Utensils, Bike } from 'lucide-react';
+import { Search, MapPin, Train, Plane, Bus, Car, Ship, Menu, X, User, LogOut, History, Clock, Star, Phone, Mail, Facebook, Twitter, Instagram, Utensils, Bike, Hotel, Calendar } from 'lucide-react';
 
 const IndianTravelWebsite = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -38,17 +38,11 @@ const IndianTravelWebsite = () => {
       image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800",
       rating: 4.9,
       history: "Built by Mughal Emperor Shah Jahan in memory of his wife Mumtaz Mahal between 1631-1653. This ivory-white marble mausoleum is a UNESCO World Heritage Site and one of the Seven Wonders of the World.",
-      transport: {
-        train: "Agra Cantt Railway Station - Connected to all major cities",
-        flight: "Agra Airport (Kheria) - Domestic flights from major cities",
-        bus: "Regular buses from Delhi, Jaipur, Mathura",
-        car: "Via Yamuna Expressway from Delhi (3-4 hours)",
-        other: "Auto-rickshaws, cycle-rickshaws available"
-      },
       streetFood: [
         { name: "Petha", description: "Sweet candy made from ash gourd", price: "₹50-100" },
         { name: "Mughlai Paratha", description: "Stuffed flatbread with minced meat", price: "₹80-150" },
-        { name: "Bedai & Jalebi", description: "Fried bread with spicy potato and sweet jalebi", price: "₹60-120" }
+        { name: "Bedai & Jalebi", description: "Fried bread with spicy potato and sweet jalebi", price: "₹60-120" },
+        { name: "Agra Ka Chaat", description: "Tangy street food with potatoes and chutneys", price: "₹40-80" }
       ]
     },
     {
@@ -59,17 +53,11 @@ const IndianTravelWebsite = () => {
       image: "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=800",
       rating: 4.7,
       history: "Constructed in 1924 to commemorate King George V and Queen Mary's visit to Mumbai in 1911. Built in Indo-Saracenic architectural style.",
-      transport: {
-        train: "Chhatrapati Shivaji Terminus (CST) is 3 km away",
-        flight: "Chhatrapati Shivaji Maharaj International Airport - 26 km",
-        bus: "BEST buses from all Mumbai areas",
-        car: "Via Marine Drive, Worli Sea Link",
-        other: "Ferry services to Elephanta Caves"
-      },
       streetFood: [
         { name: "Vada Pav", description: "Spicy potato fritter in bun", price: "₹20-40" },
         { name: "Pav Bhaji", description: "Spicy vegetable curry with buttered buns", price: "₹60-120" },
-        { name: "Bhel Puri", description: "Puffed rice with chutneys and vegetables", price: "₹30-60" }
+        { name: "Bhel Puri", description: "Puffed rice with chutneys and vegetables", price: "₹30-60" },
+        { name: "Sev Puri", description: "Crispy puris with potatoes and chutneys", price: "₹40-70" }
       ]
     },
     {
@@ -80,17 +68,191 @@ const IndianTravelWebsite = () => {
       image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800",
       rating: 4.6,
       history: "Built in 1799 by Maharaja Sawai Pratap Singh, designed by architect Lal Chand Ustad. The 5-story palace features 953 small windows.",
-      transport: {
-        train: "Jaipur Junction Railway Station - 3 km away",
-        flight: "Jaipur International Airport - 13 km away",
-        bus: "RSRTC buses from all major cities",
-        car: "Well-connected by road from Delhi",
-        other: "Auto-rickshaws, cycle-rickshaws available"
-      },
       streetFood: [
         { name: "Pyaaz Kachori", description: "Fried pastry stuffed with spiced onions", price: "₹40-80" },
         { name: "Ghewar", description: "Sweet disc-shaped dessert", price: "₹100-200" },
-        { name: "Laal Maas", description: "Spicy mutton curry", price: "₹200-400" }
+        { name: "Laal Maas", description: "Spicy mutton curry", price: "₹200-400" },
+        { name: "Mirchi Vada", description: "Chili fritters with potato filling", price: "₹30-60" }
+      ]
+    },
+    {
+      id: 4,
+      name: "Golden Temple",
+      state: "Punjab",
+      city: "Amritsar",
+      image: "https://images.unsplash.com/photo-1580194896107-a21bacfca2b0?w=800",
+      rating: 5.0,
+      history: "Sri Harmandir Sahib, founded by Guru Ram Das in 1577 and completed by Guru Arjan Dev in 1604. The temple is built in marble with gold-plated copper.",
+      streetFood: [
+        { name: "Amritsari Kulcha", description: "Stuffed bread with chole", price: "₹80-150" },
+        { name: "Lassi", description: "Sweet yogurt drink", price: "₹50-100" },
+        { name: "Chole Bhature", description: "Spicy chickpeas with fried bread", price: "₹70-120" },
+        { name: "Fish Amritsari", description: "Fried fish in gram flour batter", price: "₹150-250" }
+      ]
+    },
+    {
+      id: 5,
+      name: "India Gate",
+      state: "Delhi",
+      city: "New Delhi",
+      image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800",
+      rating: 4.8,
+      history: "A war memorial built in 1931, designed by Sir Edwin Lutyens. It commemorates 70,000 Indian soldiers who died during World War I.",
+      streetFood: [
+        { name: "Chole Bhature", description: "Spicy chickpeas with fried bread", price: "₹70-120" },
+        { name: "Aloo Tikki", description: "Potato patties with chutneys", price: "₹40-80" },
+        { name: "Dahi Bhalla", description: "Lentil dumplings in yogurt", price: "₹50-90" },
+        { name: "Kathi Roll", description: "Wrap with fillings and sauces", price: "₹60-120" }
+      ]
+    },
+    {
+      id: 6,
+      name: "Mysore Palace",
+      state: "Karnataka",
+      city: "Mysore",
+      image: "https://images.unsplash.com/photo-1620766165109-36699c44c050?w=800",
+      rating: 4.8,
+      history: "Built between 1897-1912 by British architect Henry Irwin for the Wadiyar dynasty. The palace features ornate halls and intricate carvings.",
+      streetFood: [
+        { name: "Mysore Masala Dosa", description: "Crispy rice crepe with potato filling", price: "₹60-100" },
+        { name: "Mysore Pak", description: "Sweet gram flour dessert", price: "₹80-150" },
+        { name: "Bisi Bele Bath", description: "Spicy rice and lentil dish", price: "₹70-120" },
+        { name: "Churmuri", description: "Puffed rice with spices", price: "₹20-40" }
+      ]
+    },
+    {
+      id: 7,
+      name: "Qutub Minar",
+      state: "Delhi",
+      city: "New Delhi",
+      image: "https://images.unsplash.com/photo-1587135941948-670b381f08ce?w=800",
+      rating: 4.7,
+      history: "Construction began in 1199 by Qutb-ud-din Aibak and completed by his successor Iltutmish in 1220. Standing 72.5 meters tall.",
+      streetFood: [
+        { name: "Chaat", description: "Various savory snacks", price: "₹30-70" },
+        { name: "Kulfi", description: "Traditional Indian ice cream", price: "₹40-80" },
+        { name: "Samosa", description: "Fried pastry with potato filling", price: "₹20-40" },
+        { name: "Jalebi", description: "Sweet spiral dessert", price: "₹50-100" }
+      ]
+    },
+    {
+      id: 8,
+      name: "Victoria Memorial",
+      state: "West Bengal",
+      city: "Kolkata",
+      image: "https://images.unsplash.com/photo-1591361796847-e7c8e94e0b5b?w=800",
+      rating: 4.7,
+      history: "Built between 1906-1921 in memory of Queen Victoria. Designed by William Emerson, it combines British, Mughal, and Venetian architectural styles.",
+      streetFood: [
+        { name: "Kathi Roll", description: "Wrap with fillings and sauces", price: "₹60-120" },
+        { name: "Phuchka", description: "Crispy shells with tangy water", price: "₹20-40" },
+        { name: "Mughlai Paratha", description: "Layered flatbread with egg", price: "₹50-100" },
+        { name: "Rosogolla", description: "Sweet syrupy dessert", price: "₹40-80" }
+      ]
+    },
+    {
+      id: 9,
+      name: "Ajanta Caves",
+      state: "Maharashtra",
+      city: "Aurangabad",
+      image: "https://images.unsplash.com/photo-1609920658906-8223bd289001?w=800",
+      rating: 4.9,
+      history: "Dating from 2nd century BCE to 650 CE, these 30 rock-cut Buddhist cave monuments represent the finest ancient Indian art.",
+      streetFood: [
+        { name: "Misal Pav", description: "Spicy curry with bread", price: "₹50-90" },
+        { name: "Poha", description: "Flattened rice breakfast", price: "₹30-60" },
+        { name: "Sabudana Khichdi", description: "Tapioca pearls dish", price: "₹40-70" },
+        { name: "Bhakri", description: "Traditional millet bread", price: "₹20-40" }
+      ]
+    },
+    {
+      id: 10,
+      name: "Meenakshi Temple",
+      state: "Tamil Nadu",
+      city: "Madurai",
+      image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800",
+      rating: 4.9,
+      history: "Ancient temple rebuilt in 17th century during Nayak dynasty rule. Dedicated to Goddess Meenakshi and Lord Sundareshwar.",
+      streetFood: [
+        { name: "Kari Dosa", description: "Dosa with mutton filling", price: "₹80-150" },
+        { name: "Kothu Parotta", description: "Shredded flatbread with meat", price: "₹70-130" },
+        { name: "Jigarthanda", description: "Cooling milk drink", price: "₹40-80" },
+        { name: "Mutton Chukka", description: "Dry mutton preparation", price: "₹120-200" }
+      ]
+    },
+    {
+      id: 11,
+      name: "Hampi",
+      state: "Karnataka",
+      city: "Hampi",
+      image: "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800",
+      rating: 4.8,
+      history: "Capital of the Vijayanagara Empire (1336-1565 CE), one of the greatest Hindu kingdoms in Indian history.",
+      streetFood: [
+        { name: "Holige", description: "Sweet stuffed flatbread", price: "₹40-80" },
+        { name: "Benne Dosa", description: "Butter dosa", price: "₹50-100" },
+        { name: "Kharabath", description: "Semolina dish with vegetables", price: "₹40-70" },
+        { name: "Maddur Vada", description: "Crispy savory snack", price: "₹30-60" }
+      ]
+    },
+    {
+      id: 12,
+      name: "Jaisalmer Fort",
+      state: "Rajasthan",
+      city: "Jaisalmer",
+      image: "https://images.unsplash.com/photo-1609138520812-17e62a2d3e42?w=800",
+      rating: 4.7,
+      history: "Built in 1156 CE by Rajput ruler Rawal Jaisal, it's one of the few living forts with 3,000 residents still residing within.",
+      streetFood: [
+        { name: "Ker Sangri", description: "Desert beans and berries dish", price: "₹80-150" },
+        { name: "Dal Baati Churma", description: "Lentils with baked dough balls", price: "₹100-180" },
+        { name: "Gatte Ki Sabzi", description: "Gram flour dumplings in gravy", price: "₹70-120" },
+        { name: "Mohan Maas", description: "Royal meat preparation", price: "₹200-350" }
+      ]
+    },
+    {
+      id: 13,
+      name: "Konark Sun Temple",
+      state: "Odisha",
+      city: "Konark",
+      image: "https://images.unsplash.com/photo-1610200920742-6f71b84e3826?w=800",
+      rating: 4.8,
+      history: "Built in 13th century by King Narasimhadeva I of Eastern Ganga Dynasty. Designed as a colossal chariot of Sun God Surya.",
+      streetFood: [
+        { name: "Chhena Poda", description: "Burnt cheese dessert", price: "₹60-120" },
+        { name: "Dalma", description: "Lentil and vegetable stew", price: "₹50-90" },
+        { name: "Pakhala", description: "Fermented rice dish", price: "₹40-70" },
+        { name: "Rasabali", description: "Sweet cheese patties", price: "₹50-100" }
+      ]
+    },
+    {
+      id: 14,
+      name: "Varanasi Ghats",
+      state: "Uttar Pradesh",
+      city: "Varanasi",
+      image: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=800",
+      rating: 4.9,
+      history: "Varanasi is one of the world's oldest continuously inhabited cities with 88 ghats along the Ganges River.",
+      streetFood: [
+        { name: "Kachori Sabzi", description: "Fried bread with potato curry", price: "₹40-80" },
+        { name: "Malaiyo", description: "Seasonal milk froth dessert", price: "₹50-100" },
+        { name: "Tamatar Chaat", description: "Tomato-based street food", price: "₹30-60" },
+        { name: "Laung Lata", description: "Sweet pastry", price: "₹20-40" }
+      ]
+    },
+    {
+      id: 15,
+      name: "Red Fort",
+      state: "Delhi",
+      city: "New Delhi",
+      image: "https://images.unsplash.com/photo-1597074866923-dc0589150560?w=800",
+      rating: 4.7,
+      history: "Built by Mughal Emperor Shah Jahan in 1648 when he shifted his capital from Agra to Delhi.",
+      streetFood: [
+        { name: "Nihari", description: "Slow-cooked meat stew", price: "₹120-200" },
+        { name: "Kebabs", description: "Grilled meat skewers", price: "₹80-150" },
+        { name: "Shahi Tukda", description: "Bread pudding dessert", price: "₹60-120" },
+        { name: "Phirni", description: "Rice pudding", price: "₹50-100" }
       ]
     }
   ];
@@ -98,37 +260,43 @@ const IndianTravelWebsite = () => {
   const indianStates = [
     "All States", "Uttar Pradesh", "Maharashtra", "Rajasthan", "Punjab", "Delhi", 
     "Karnataka", "West Bengal", "Tamil Nadu", "Madhya Pradesh", "Kerala", "Goa", 
-    "Gujarat", "Jammu & Kashmir", "Assam", "Uttarakhand", "Telangana", "Ladakh"
+    "Gujarat", "Jammu & Kashmir", "Assam", "Uttarakhand", "Telangana", "Ladakh", "Odisha"
   ];
 
   const transportProviders = {
     train: [
       { name: "Indian Railways", price: "₹500-2000", duration: "Varies", type: "Train" },
       { name: "Gatiman Express", price: "₹800-1500", duration: "2-6 hours", type: "Train" },
-      { name: "Rajdhani Express", price: "₹1200-3000", duration: "Overnight", type: "Train" }
+      { name: "Rajdhani Express", price: "₹1200-3000", duration: "Overnight", type: "Train" },
+      { name: "Shatabdi Express", price: "₹700-1800", duration: "Day journey", type: "Train" }
     ],
     flight: [
       { name: "Air India", price: "₹2000-8000", duration: "1-3 hours", type: "Flight" },
       { name: "IndiGo", price: "₹1500-6000", duration: "1-3 hours", type: "Flight" },
-      { name: "SpiceJet", price: "₹1800-6500", duration: "1-3 hours", type: "Flight" }
+      { name: "SpiceJet", price: "₹1800-6500", duration: "1-3 hours", type: "Flight" },
+      { name: "Vistara", price: "₹2500-9000", duration: "1-3 hours", type: "Flight" }
     ],
     bus: [
-      { name: "UPSRTC", price: "₹300-1200", duration: "4-8 hours", type: "Bus" },
-      { name: "RSRTC", price: "₹400-1500", duration: "4-8 hours", type: "Bus" },
-      { name: "Private Volvo", price: "₹800-2000", duration: "4-8 hours", type: "Bus" }
+      { name: "State Transport", price: "₹300-1200", duration: "4-8 hours", type: "Bus" },
+      { name: "Private Volvo", price: "₹800-2000", duration: "4-8 hours", type: "Bus" },
+      { name: "Luxury Coach", price: "₹1000-2500", duration: "4-8 hours", type: "Bus" },
+      { name: "Sleeper Bus", price: "₹600-1800", duration: "Overnight", type: "Bus" }
     ],
     car: [
       { name: "Ola Outstation", price: "₹10-15/km", duration: "Flexible", type: "Car" },
       { name: "Uber Intercity", price: "₹12-18/km", duration: "Flexible", type: "Car" },
-      { name: "Self Drive Car", price: "₹1500-3000/day", duration: "Flexible", type: "Car" }
+      { name: "Self Drive Car", price: "₹1500-3000/day", duration: "Flexible", type: "Car" },
+      { name: "Private Taxi", price: "₹8-12/km", duration: "Flexible", type: "Car" }
     ],
     bike: [
       { name: "Royal Enfield", price: "₹800-1500/day", duration: "Flexible", type: "Bike" },
-      { name: "Bike Rental", price: "₹500-1000/day", duration: "Flexible", type: "Bike" }
+      { name: "Bike Rental", price: "₹500-1000/day", duration: "Flexible", type: "Bike" },
+      { name: "Scooter Rental", price: "₹300-700/day", duration: "Flexible", type: "Bike" }
     ],
     other: [
       { name: "Local Taxi", price: "₹200-500/day", duration: "Flexible", type: "Taxi" },
-      { name: "Auto Rickshaw", price: "₹50-200/trip", duration: "Flexible", type: "Auto" }
+      { name: "Auto Rickshaw", price: "₹50-200/trip", duration: "Flexible", type: "Auto" },
+      { name: "Cycle Rickshaw", price: "₹20-100/trip", duration: "Flexible", type: "Cycle" }
     ]
   };
 
@@ -153,6 +321,11 @@ const IndianTravelWebsite = () => {
   };
 
   const handleTransportBooking = (provider) => {
+    if (!bookingData.from || !bookingData.date) {
+      alert("Please fill in all required fields (From and Date)");
+      return;
+    }
+    
     alert(`Booking confirmed!\n\nService: ${provider.name}\nPrice: ${provider.price}\nDuration: ${provider.duration}\n\nFrom: ${bookingData.from}\nTo: ${bookingData.to}\nDate: ${bookingData.date}\nPassengers: ${bookingData.passengers}`);
     setShowTransportOptions(false);
   };
@@ -166,7 +339,10 @@ const IndianTravelWebsite = () => {
       <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         <div className="p-6">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="text-2xl font-bold text-gray-800">Book Your Journey</h3>
+            <h3 className="text-2xl font-bold text-gray-800 flex items-center">
+              <MapPin className="mr-2 text-orange-600" />
+              Book Your Journey
+            </h3>
             <button
               onClick={() => setShowTransportOptions(false)}
               className="text-gray-400 hover:text-gray-600"
@@ -177,13 +353,14 @@ const IndianTravelWebsite = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div>
-              <label className="block text-gray-700 mb-2 font-medium">From</label>
+              <label className="block text-gray-700 mb-2 font-medium">From *</label>
               <input
                 type="text"
                 value={bookingData.from}
                 onChange={(e) => setBookingData({...bookingData, from: e.target.value})}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 placeholder="Your current city"
+                required
               />
             </div>
             <div>
@@ -194,15 +371,17 @@ const IndianTravelWebsite = () => {
                 onChange={(e) => setBookingData({...bookingData, to: e.target.value})}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 placeholder="Destination city"
+                readOnly
               />
             </div>
             <div>
-              <label className="block text-gray-700 mb-2 font-medium">Date</label>
+              <label className="block text-gray-700 mb-2 font-medium">Date *</label>
               <input
                 type="date"
                 value={bookingData.date}
                 onChange={(e) => setBookingData({...bookingData, date: e.target.value})}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                required
               />
             </div>
             <div>
@@ -221,25 +400,25 @@ const IndianTravelWebsite = () => {
 
           <div className="space-y-4">
             {Object.entries(transportProviders).map(([mode, providers]) => (
-              <div key={mode} className="border rounded-lg">
-                <div className="bg-gray-50 p-4 border-b">
-                  <h4 className="font-bold text-lg capitalize flex items-center">
+              <div key={mode} className="border rounded-lg overflow-hidden">
+                <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-4">
+                  <h4 className="font-bold text-lg text-white capitalize flex items-center">
                     <TransportIcon type={mode} />
                     <span className="ml-2">{mode === 'other' ? 'Local Transport' : `By ${mode}`}</span>
                   </h4>
                 </div>
                 <div className="p-4 space-y-3">
                   {providers.map((provider, index) => (
-                    <div key={index} className="flex justify-between items-center p-3 border rounded-lg hover:bg-orange-50 transition-colors">
-                      <div>
-                        <p className="font-semibold">{provider.name}</p>
-                        <p className="text-sm text-gray-600">{provider.duration}</p>
+                    <div key={index} className="flex justify-between items-center p-4 border rounded-lg hover:bg-orange-50 transition-colors">
+                      <div className="flex-1">
+                        <p className="font-semibold text-gray-800">{provider.name}</p>
+                        <p className="text-sm text-gray-600 mt-1">{provider.duration}</p>
                       </div>
                       <div className="text-right">
-                        <p className="font-bold text-green-600">{provider.price}</p>
+                        <p className="font-bold text-green-600 text-lg">{provider.price}</p>
                         <button
                           onClick={() => handleTransportBooking(provider)}
-                          className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors text-sm"
+                          className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors text-sm mt-2"
                         >
                           Book Now
                         </button>
@@ -249,6 +428,13 @@ const IndianTravelWebsite = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+            <p className="text-blue-800 text-sm flex items-center">
+              <Clock className="mr-2" size={16} />
+              <strong>Travel Tip:</strong> Book in advance for better prices and availability. Most transport options offer free cancellation up to 24 hours before travel.
+            </p>
           </div>
         </div>
       </div>
@@ -262,7 +448,7 @@ const IndianTravelWebsite = () => {
           <div className="flex justify-between items-center mb-6">
             <h3 className="text-2xl font-bold text-gray-800 flex items-center">
               <Utensils className="mr-2 text-orange-600" />
-              Famous Street Food
+              Famous Street Food - {selectedDestination?.name}
             </h3>
             <button
               onClick={() => setShowFoodOptions(false)}
@@ -272,30 +458,30 @@ const IndianTravelWebsite = () => {
             </button>
           </div>
 
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {selectedDestination?.streetFood?.map((food, index) => (
-              <div key={index} className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+              <div key={index} className="border-2 border-orange-200 rounded-xl p-4 hover:shadow-lg transition-shadow bg-white">
                 <div className="flex justify-between items-start">
-                  <div>
+                  <div className="flex-1">
                     <h4 className="font-bold text-lg text-gray-800">{food.name}</h4>
-                    <p className="text-gray-600 mt-1">{food.description}</p>
-                    <p className="text-green-600 font-semibold mt-2">{food.price}</p>
+                    <p className="text-gray-600 text-sm mt-2">{food.description}</p>
+                    <p className="text-green-600 font-semibold text-lg mt-3">{food.price}</p>
                   </div>
                   <button
                     onClick={() => handleFoodOrder(food)}
-                    className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors"
+                    className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors ml-4"
                   >
-                    Order Now
+                    Order
                   </button>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-6 p-4 bg-orange-50 rounded-lg">
+          <div className="mt-6 p-4 bg-orange-50 rounded-lg border border-orange-200">
             <p className="text-orange-800 text-sm">
-              💡 <strong>Pro Tip:</strong> Food will be delivered to your current location near {selectedDestination?.name}. 
-              Perfect for enjoying local flavors while exploring!
+              🚚 <strong>Delivery Info:</strong> Food will be delivered to your current location near {selectedDestination?.name}. 
+              Average delivery time: 20-30 minutes. Perfect for enjoying local flavors while exploring!
             </p>
           </div>
         </div>
@@ -305,7 +491,6 @@ const IndianTravelWebsite = () => {
 
   const LandingPage = () => (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-green-50">
-      {/* ... (same landing page code as before) ... */}
       <nav className="bg-white shadow-md fixed w-full top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -334,6 +519,43 @@ const IndianTravelWebsite = () => {
             Explore every corner of India - from majestic monuments to hidden gems, experience the rich heritage and diverse culture of our nation
           </p>
           
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+              <MapPin className="text-orange-600 mx-auto mb-4" size={48} />
+              <h3 className="text-2xl font-bold mb-3">15+ Destinations</h3>
+              <p className="text-gray-600">Every major tourist spot across India covered with detailed information</p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+              <Train className="text-green-600 mx-auto mb-4" size={48} />
+              <h3 className="text-2xl font-bold mb-3">Easy Transport</h3>
+              <p className="text-gray-600">Book trains, flights, buses, and more with one click</p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+              <Utensils className="text-red-600 mx-auto mb-4" size={48} />
+              <h3 className="text-2xl font-bold mb-3">Local Food</h3>
+              <p className="text-gray-600">Order authentic street food delivered to your location</p>
+            </div>
+          </div>
+
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+            {destinations.slice(0, 8).map(dest => (
+              <div key={dest.id} className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow group">
+                <img 
+                  src={dest.image} 
+                  alt={dest.name} 
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                  onError={(e) => {
+                    e.target.src = `https://via.placeholder.com/800x600/FFA500/FFFFFF?text=${encodeURIComponent(dest.name)}`;
+                  }}
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                  <p className="text-white font-semibold">{dest.name}</p>
+                  <p className="text-gray-300 text-sm">{dest.state}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
           <button
             onClick={() => { setShowAuthModal(true); setAuthMode('login'); }}
             className="mt-12 bg-gradient-to-r from-orange-600 to-green-600 text-white px-12 py-4 rounded-lg text-xl font-semibold hover:from-orange-700 hover:to-green-700 transition-all shadow-lg hover:shadow-xl"
@@ -342,6 +564,17 @@ const IndianTravelWebsite = () => {
           </button>
         </div>
       </div>
+
+      <footer className="bg-gray-900 text-white py-8">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <div className="flex justify-center space-x-6 mb-4">
+            <Facebook size={24} className="hover:text-orange-400 cursor-pointer" />
+            <Twitter size={24} className="hover:text-orange-400 cursor-pointer" />
+            <Instagram size={24} className="hover:text-orange-400 cursor-pointer" />
+          </div>
+          <p className="text-gray-400">© 2025 Incredible India Travel Portal. Explore with pride.</p>
+        </div>
+      </footer>
     </div>
   );
 
@@ -420,14 +653,14 @@ const IndianTravelWebsite = () => {
 
   const TransportIcon = ({ type }) => {
     const icons = {
-      train: <Train size={20} className="text-blue-600" />,
-      flight: <Plane size={20} className="text-purple-600" />,
-      bus: <Bus size={20} className="text-green-600" />,
-      car: <Car size={20} className="text-red-600" />,
-      bike: <Bike size={20} className="text-orange-600" />,
-      other: <Ship size={20} className="text-gray-600" />
+      train: <Train size={24} className="text-blue-600" />,
+      flight: <Plane size={24} className="text-purple-600" />,
+      bus: <Bus size={24} className="text-green-600" />,
+      car: <Car size={24} className="text-red-600" />,
+      bike: <Bike size={24} className="text-orange-600" />,
+      other: <Ship size={24} className="text-gray-600" />
     };
-    return icons[type] || <Car size={20} className="text-gray-600" />;
+    return icons[type] || <Car size={24} className="text-gray-600" />;
   };
 
   const DestinationModal = ({ destination, onClose }) => (
@@ -455,7 +688,7 @@ const IndianTravelWebsite = () => {
         </div>
 
         <div className="p-8">
-          <div className="mb-6">
+          <div className="mb-8">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-2xl font-bold text-gray-800 flex items-center">
                 <History className="mr-2 text-orange-600" size={28} />
@@ -471,13 +704,13 @@ const IndianTravelWebsite = () => {
 
           {/* Transportation Options */}
           <div className="mb-8">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
               <MapPin className="mr-2 text-green-600" size={28} />
-              How to Reach
+              Book Your Journey
             </h3>
             
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-4">
-              {Object.keys(destination.transport).map((mode) => (
+              {Object.keys(transportProviders).map((mode) => (
                 <button
                   key={mode}
                   onClick={() => {
@@ -488,7 +721,7 @@ const IndianTravelWebsite = () => {
                     });
                     setShowTransportOptions(true);
                   }}
-                  className="bg-white border-2 border-orange-200 rounded-xl p-4 text-center hover:border-orange-500 hover:bg-orange-50 transition-all duration-200 transform hover:-translate-y-1 shadow-sm"
+                  className="bg-white border-2 border-orange-200 rounded-xl p-4 text-center hover:border-orange-500 hover:bg-orange-50 transition-all duration-200 transform hover:-translate-y-1 shadow-sm hover:shadow-md"
                 >
                   <div className="flex flex-col items-center">
                     <div className="bg-orange-100 p-3 rounded-lg mb-2">
@@ -497,6 +730,7 @@ const IndianTravelWebsite = () => {
                     <span className="font-semibold text-gray-800 capitalize text-sm">
                       {mode === 'other' ? 'Local' : mode}
                     </span>
+                    <span className="text-xs text-gray-600 mt-1">Click to book</span>
                   </div>
                 </button>
               ))}
@@ -505,20 +739,26 @@ const IndianTravelWebsite = () => {
 
           {/* Street Food Section */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
               <Utensils className="mr-2 text-red-600" size={28} />
               Famous Street Food
             </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-              {destination.streetFood.slice(0, 2).map((food, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              {destination.streetFood.slice(0, 4).map((food, index) => (
                 <div key={index} className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
                   <div className="flex justify-between items-start">
-                    <div>
+                    <div className="flex-1">
                       <h4 className="font-bold text-lg text-gray-800">{food.name}</h4>
                       <p className="text-gray-600 text-sm mt-1">{food.description}</p>
-                      <p className="text-green-600 font-semibold mt-2">{food.price}</p>
+                      <p className="text-green-600 font-semibold text-lg mt-2">{food.price}</p>
                     </div>
+                    <button
+                      onClick={() => handleFoodOrder(food)}
+                      className="bg-red-600 text-white px-3 py-1 rounded-lg hover:bg-red-700 transition-colors text-sm ml-2"
+                    >
+                      Order
+                    </button>
                   </div>
                 </div>
               ))}
@@ -526,7 +766,7 @@ const IndianTravelWebsite = () => {
             
             <button
               onClick={() => setShowFoodOptions(true)}
-              className="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors flex items-center justify-center"
+              className="w-full bg-gradient-to-r from-red-600 to-orange-600 text-white py-4 rounded-lg font-semibold hover:from-red-700 hover:to-orange-700 transition-colors flex items-center justify-center text-lg"
             >
               <Utensils size={20} className="mr-2" />
               View All Food Options & Order
@@ -664,8 +904,8 @@ const IndianTravelWebsite = () => {
 
                 <div className="flex items-center justify-between pt-4 border-t">
                   <div className="flex space-x-2">
-                    {Object.keys(destination.transport).slice(0, 4).map((mode) => (
-                      <div key={mode} className="bg-orange-100 p-2 rounded-lg">
+                    {Object.keys(transportProviders).slice(0, 4).map((mode) => (
+                      <div key={mode} className="bg-orange-100 p-2 rounded-lg" title={`Book ${mode}`}>
                         <TransportIcon type={mode} />
                       </div>
                     ))}
@@ -690,6 +930,70 @@ const IndianTravelWebsite = () => {
           </div>
         )}
       </div>
+
+      <footer className="bg-gray-900 text-white py-12 mt-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <h4 className="text-xl font-bold mb-4 flex items-center">
+                <MapPin className="mr-2 text-orange-400" size={24} />
+                Incredible India
+              </h4>
+              <p className="text-gray-400">
+                Your complete guide to exploring the diverse beauty and rich heritage of India.
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-bold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li className="hover:text-white cursor-pointer">About Us</li>
+                <li className="hover:text-white cursor-pointer">Contact</li>
+                <li className="hover:text-white cursor-pointer">Privacy Policy</li>
+                <li className="hover:text-white cursor-pointer">Terms of Service</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-bold mb-4">Popular States</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li className="hover:text-white cursor-pointer">Rajasthan</li>
+                <li className="hover:text-white cursor-pointer">Kerala</li>
+                <li className="hover:text-white cursor-pointer">Goa</li>
+                <li className="hover:text-white cursor-pointer">Himachal Pradesh</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-bold mb-4">Contact Us</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li className="flex items-center">
+                  <Phone size={16} className="mr-2" />
+                  +91 1800-XXX-XXXX
+                </li>
+                <li className="flex items-center">
+                  <Mail size={16} className="mr-2" />
+                  info@incredibleindia.com
+                </li>
+              </ul>
+              <div className="flex space-x-4 mt-4">
+                <Facebook size={24} className="hover:text-orange-400 cursor-pointer transition-colors" />
+                <Twitter size={24} className="hover:text-orange-400 cursor-pointer transition-colors" />
+                <Instagram size={24} className="hover:text-orange-400 cursor-pointer transition-colors" />
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-800 pt-8 text-center">
+            <p className="text-gray-400">
+              © 2025 Incredible India Travel Portal. Made with ❤️ for travelers. All rights reserved.
+            </p>
+            <p className="text-gray-500 mt-2 text-sm">
+              Showcasing 15+ major destinations with booking and food ordering features
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 
